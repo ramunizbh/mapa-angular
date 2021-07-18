@@ -1,0 +1,45 @@
+<table class='table'>
+  <thead>
+    <tr>
+      <th>{{pageTitle}}{{regionCode}}</th>
+<th *ngIf='sumAlert>0'>
+  <img [src] = 'imgAlert'
+  [style.width.px] = 'imgWidth'
+  [style.margin.px] = 'imgMargin'>
+  <span>{{sumAlert}}</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let region of filterRegions'>
+      <ng-template #popContent>
+        <table class='table'
+          *ngIf='filterObras && filterObras.length'>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Construção</th>
+              <th>Progresso</th>
+              <th>Prazo</th>
+              <th>Custo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let obra of filterObras' class="table-secondary">
+              <td>{{ obra.desc  }}</td>
+              <td>{{ obra.const/100 | percent:'1.0-2' }}</td>
+              <td>{{ obra.status/100 | percent:'1.0-2'}}</td>
+              <td>{{ obra.prazo/100 | percent:'1.0-2'}}</td>
+              <td>{{ obra.custo/100 | percent:'1.0-2'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+      <td (click)='onClick(region.idLoc)' (mouseover)="atualizaObras(region.idLoc)" placement="right" container="body" triggers="mouseenter:mouseleave" [ngbPopover]="popContent" popoverClass="my-custom-class">
+        <img [src] = 'region.imgUrl'
+        [style.width.px] = 'imgWidth'
+        [style.margin.px] = 'imgMargin'>
+        {{region.name}}
+      </td>
+    </tr>
+  </tbody>
+</table>
