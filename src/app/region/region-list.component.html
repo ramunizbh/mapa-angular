@@ -34,7 +34,7 @@
           </tbody>
         </table>
       </ng-template>
-      <td (click)='onClick(region.idLoc)' (mouseover)="atualizaObras(region.idLoc)" placement="right" container="body" triggers="mouseenter:mouseleave" [ngbPopover]="popContent" popoverClass="my-custom-class">
+      <td (click)='onClick(region.idLoc)' (mouseover)="atualizaObras(region.idLoc)" placement={{positionDiv}} container="body" triggers="mouseenter:mouseleave" [ngbPopover]="popContent" popoverClass="my-custom-class">
         <img [src] = 'region.imgUrl'
         [style.width.px] = 'imgWidth'
         [style.margin.px] = 'imgMargin'>

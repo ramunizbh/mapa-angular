@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   pageTitle = 'Relatório Mundial';
+  dataAtual = new Date();
 }

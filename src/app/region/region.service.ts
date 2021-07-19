@@ -17,7 +17,7 @@ export class RegionService{
       "status": 1,
       "obras": [{
           "desc": "Mina",
-          "const": 64.5,
+          "const": 44.5,
           "status": 28.3,
           "prazo": 100,
           "custo": 72
@@ -28,6 +28,13 @@ export class RegionService{
             "status": 38.3,
             "prazo": 100,
             "custo": 82
+          },
+          {
+            "desc": "Fábrica",
+            "const": 64.5,
+            "status": 78.3,
+            "prazo": 100,
+            "custo": 72
           }]
     },
     {
@@ -1193,7 +1200,7 @@ export class RegionService{
     "status": 0,
     "obras": [{
       "desc": "Mina",
-      "const": 64.5,
+      "const": 54.5,
       "status": 28.3,
       "prazo": 100,
       "custo": 72
@@ -1204,6 +1211,13 @@ export class RegionService{
         "status": 38.3,
         "prazo": 100,
         "custo": 82
+      },
+      {
+        "desc": "Fábrica",
+        "const": 64.5,
+        "status": 42.3,
+        "prazo": 75,
+        "custo": 68
       }]
   }
   ];

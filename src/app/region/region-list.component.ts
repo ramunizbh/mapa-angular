@@ -15,6 +15,7 @@ export class RegionListComponent implements OnInit {
   imgMargin: number = 2;
   sumAlert: number = 0;
   @Input() regionCode: number = 0;
+  positionDiv: string =  "right"  ;
 
   regionName: string = 'Localidade 3';
   filterRegions: IRegion[] = [];
@@ -30,6 +31,7 @@ export class RegionListComponent implements OnInit {
   atualizaObras(filterId: number): void {
     const obraAtual = this.regions.filter(region => region.idLoc == filterId);
     this.filterObras = obraAtual[0].obras;
+    this.positionDiv = this.regionCode == 5 || this.regionCode == 10 ? "left" : "right"  ;
     console.log(this.filterObras);
   }
 
